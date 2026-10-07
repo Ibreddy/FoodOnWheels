@@ -1,0 +1,274 @@
+@tailwind base;
+@tailwind components;
+@tailwind utilities;
+
+:root {
+  --bg-primary: #0F1115;
+  --bg-surface: #181C23;
+  --bg-surface2: #252A34;
+  --border-color: #2A2F3D;
+  --text-primary: #F9FAFC;
+  --text-secondary: #94A3B8;
+  --text-muted: #64748B;
+}
+
+html.light {
+  --bg-primary: #F8FAFC;
+  --bg-surface: #FFFFFF;
+  --bg-surface2: #F1F5F9;
+  --border-color: #E2E8F0;
+  --text-primary: #0F172A;
+  --text-secondary: #475569;
+  --text-muted: #64748B;
+}
+
+body {
+  color: var(--text-primary);
+  background-color: var(--bg-primary);
+  font-family: 'Plus Jakarta Sans', 'Inter', system-ui, sans-serif;
+  overflow-x: hidden;
+  transition: background-color 0.2s ease, color 0.2s ease;
+}
+
+/* Light & Dark Mode Utility Adaptations */
+html.light body,
+html.light main,
+html.light .bg-dark-bg,
+html.light .bg-dark-bg\/95,
+html.light .bg-dark-bg\/90,
+html.light .bg-\[\#14171F\] {
+  background-color: #F8FAFC !important;
+  color: #0F172A !important;
+}
+
+html.dark body,
+html.dark main,
+html.dark .bg-dark-bg {
+  background-color: #0F1115 !important;
+  color: #F9FAFC !important;
+}
+
+/* Light mode card adaptations */
+html.light .bg-dark-card,
+html.light .bg-\[\#181C23\] {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+  box-shadow: 0 4px 20px -2px rgba(0, 0, 0, 0.05) !important;
+  color: #0F172A !important;
+}
+
+html.dark .bg-dark-card {
+  background-color: #181C23 !important;
+  border-color: #2A2F3D !important;
+}
+
+html.light .bg-dark-surface2,
+html.light .bg-\[\#252A34\] {
+  background-color: #F1F5F9 !important;
+  border-color: #E2E8F0 !important;
+  color: #0F172A !important;
+}
+
+html.dark .bg-dark-surface2 {
+  background-color: #252A34 !important;
+}
+
+html.light .border-dark-border,
+html.light .border-\[\#2A2F3D\] {
+  border-color: #E2E8F0 !important;
+}
+
+html.dark .border-dark-border {
+  border-color: #2A2F3D !important;
+}
+
+html.light header,
+html.light aside {
+  background-color: #FFFFFF !important;
+  border-color: #E2E8F0 !important;
+}
+
+/* Card Heading & Text Adaptations in Light Mode */
+html.light .bg-\[\#181C23\] h1,
+html.light .bg-\[\#181C23\] h2,
+html.light .bg-\[\#181C23\] h3,
+html.light .bg-\[\#181C23\] h4,
+html.light .bg-\[\#181C23\] p,
+html.light .bg-\[\#181C23\] span.text-white:not(.bg-\[\#FF7A00\]):not(.bg-brand-orange):not(.bg-purple-600):not(.bg-emerald-500):not(.bg-rose-500):not(.bg-amber-500),
+html.light .bg-\[\#14171F\] h1,
+html.light .bg-\[\#14171F\] h2,
+html.light .bg-\[\#14171F\] h3,
+html.light .bg-\[\#14171F\] h4,
+html.light .bg-\[\#14171F\] p,
+html.light .bg-\[\#252A34\] h1,
+html.light .bg-\[\#252A34\] h2,
+html.light .bg-\[\#252A34\] h3,
+html.light .bg-\[\#252A34\] h4,
+html.light .bg-white h1,
+html.light .bg-white h2,
+html.light .bg-white h3,
+html.light .bg-white h4,
+html.light .bg-dark-card h1,
+html.light .bg-dark-card h2,
+html.light .bg-dark-card h3,
+html.light .bg-dark-card h4,
+html.light h1.text-white,
+html.light h2.text-white,
+html.light h3.text-white,
+html.light h4.text-white {
+  color: #0F172A !important;
+}
+
+html.light .text-gray-200,
+html.light .text-gray-300,
+html.light .text-gray-400 {
+  color: #475569 !important;
+}
+
+html.light .text-gray-500 {
+  color: #64748B !important;
+}
+
+/* Preserve Gradient Clip Text on Light Mode (Prevents solid background boxes around text) */
+html.light .bg-clip-text,
+.bg-clip-text {
+  -webkit-background-clip: text !important;
+  background-clip: text !important;
+  color: transparent !important;
+}
+
+/* Retain high-contrast white text inside buttons and status badges */
+html.light button.bg-\[\#FF7A00\],
+html.light button.bg-brand-orange,
+html.light button.bg-purple-600,
+html.light button.bg-emerald-500,
+html.light button.bg-rose-500,
+html.light button.bg-amber-500,
+html.light .bg-\[\#FF7A00\],
+html.light .bg-brand-orange,
+html.light .bg-purple-600,
+html.light .bg-emerald-500,
+html.light .bg-rose-500,
+html.light .bg-amber-500,
+html.light .bg-\[\#2CC55E\] {
+  color: #FFFFFF !important;
+}
+
+html.light button.bg-\[\#FF7A00\] *,
+html.light button.bg-brand-orange *,
+html.light button.bg-purple-600 *,
+html.light button.bg-emerald-500 *,
+html.light button.bg-rose-500 *,
+html.light button.bg-amber-500 * {
+  color: #FFFFFF !important;
+}
+
+/* Input & Select Adaptations in Light Mode */
+html.light input,
+html.light select,
+html.light textarea {
+  background-color: #FFFFFF !important;
+  color: #0F172A !important;
+  border-color: #CBD5E1 !important;
+}
+
+html.light input::placeholder,
+html.light textarea::placeholder {
+  color: #94A3B8 !important;
+}
+
+/* Custom Scrollbars */
+::-webkit-scrollbar {
+  width: 6px;
+  height: 6px;
+}
+::-webkit-scrollbar-track {
+  background: var(--bg-primary);
+}
+::-webkit-scrollbar-thumb {
+  background: #334155;
+  border-radius: 9999px;
+}
+html.light ::-webkit-scrollbar-thumb {
+  background: #CBD5E1;
+}
+::-webkit-scrollbar-thumb:hover {
+  background: #FF7A00;
+}
+
+/* Leaflet Map Styling */
+.leaflet-container {
+  background-color: #0F1115 !important;
+  font-family: inherit;
+}
+html.light .leaflet-container {
+  background-color: #F8FAFC !important;
+}
+
+.custom-popup .leaflet-popup-content-wrapper {
+  background: #181C23 !important;
+  color: #fff !important;
+  border: 1px solid #2A2F3D !important;
+  border-radius: 16px !important;
+}
+html.light .custom-popup .leaflet-popup-content-wrapper {
+  background: #FFFFFF !important;
+  color: #0F172A !important;
+  border: 1px solid #E2E8F0 !important;
+}
+
+.custom-popup .leaflet-popup-tip {
+  background: #181C23 !important;
+}
+html.light .custom-popup .leaflet-popup-tip {
+  background: #FFFFFF !important;
+}
+
+/* Canva Yellow & Dark Red Photographic Theme Utilities */
+.bg-canva-vignette {
+  background: radial-gradient(circle at center, rgba(128, 0, 32, 0.35) 0%, rgba(15, 17, 21, 0.95) 100%), #1C0508;
+}
+
+.text-canva-gold-gradient {
+  background: linear-gradient(135deg, #FFD700 0%, #FFB800 50%, #FF9900 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.text-canva-red-gradient {
+  background: linear-gradient(135deg, #FF9900 0%, #E63946 50%, #800020 100%);
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+}
+
+.border-canva-crimson {
+  border-color: rgba(165, 28, 48, 0.4);
+}
+
+.shadow-canva-gold {
+  box-shadow: 0 10px 30px -5px rgba(255, 184, 0, 0.35);
+}
+
+.shadow-canva-red {
+  box-shadow: 0 10px 30px -5px rgba(128, 0, 32, 0.45);
+}
+
+/* Footer Global Reset & Theme Rules */
+footer ul,
+footer ol {
+  list-style: none !important;
+  list-style-type: none !important;
+  padding-left: 0 !important;
+  margin-left: 0 !important;
+}
+footer li {
+  list-style: none !important;
+  list-style-type: none !important;
+}
+footer a {
+  text-decoration: none !important;
+}
+footer a:hover {
+  text-decoration: none !important;
+}
+
